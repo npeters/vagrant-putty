@@ -70,8 +70,8 @@ module VagrantPutty
 
 		# Get the SSH information and cache it here
 		ssh_info = vm.ssh.info()
-	   putty_key_path = vm.config.ssh.putty_private_key_path
-       ssh_info[:putty_key_path] = File.expand_path(putty_key_path, vm.env.root_path) if putty_key_path
+	    putty_key_path = vm.config.putty.putty_private_key_path if vm.config.putty
+        ssh_info[:putty_key_path] = File.expand_path(putty_key_path, vm.env.root_path) if putty_key_path
 
 		options = {}
 		options[:host] = ssh_info[:host]
