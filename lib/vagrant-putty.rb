@@ -1,2 +1,2 @@
-require 'vagrant-putty/command'
 require 'vagrant-putty/config'
+require 'vagrant-putty/plugin'

@@ -4,16 +4,13 @@ A [vagrant](http://vagrantup.com) plugin that allows you to [PuTTY](http://www.c
 
 # How do I use it?
 
-Install it:
+Install it (it will be published on rubygems.org eventually):
 <pre>
-gem install vagrant-putty
+git clone git@github.com:mdellanoce/vagrant-putty.git
+rake install
 </pre>
 
 Use it:
 <pre>
 vagrant putty
 </pre>
-
-# Assumptions
-
-The putty executable is somewhere on your path.
