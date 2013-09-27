@@ -28,8 +28,6 @@ module VagrantPutty
 			}
 
 			#	ssh_connect(vm, opts)
-			puts "!!!!!!!!!!!!!!!!!!!"
-			puts vm.inspect	
 			ssh_connect(vm,opts)
 		end
 
@@ -46,7 +44,10 @@ module VagrantPutty
 		 ssh_info = vm.ssh_info
          raise Vagrant::Errors::SSHNotReady if ssh_info.nil?
 		
-		putty_private_key_path =  vm.config.putty.putty_private_key_path if vm.config.putty && vm.config.putty.putty_private_key_path
+		
+		
+		
+		putty_private_key_path =  vm.config.putty.putty_private_key_path if vm.config.putty.putty_private_key_path
 		
 		putty_key_path = nil
 		if putty_private_key_path
@@ -65,19 +66,18 @@ module VagrantPutty
 			end		
 			
 		end
-        
-		if vm.config.putty && vm.config.putty.putty_path
+		
+		if vm.config.putty.putty_path
 			putty_path =  vm.config.putty.putty_path 
 		else
 			putty_path = "putty.exe"
 		end
-
-		if vm.config.putty && vm.config.putty.session
-			putty_session =  vm.config.putty.session 
+	
+		if vm.config.putty.putty_session
+			putty_session =  vm.config.putty.putty_session 
 		else
 			putty_session = nil
 		end
-		
 		
 		# Command line options
 		command_options =["/C", "start" ,putty_path] 
